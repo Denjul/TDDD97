@@ -54,7 +54,7 @@ function reloadWall(){
 		for(i = 0 ; i < res.data.length; i++){
 		document.getElementById("messagesbrowser").innerHTML += "<label><b>" + res.data[i].writer + "</b>: " + res.data[i].content + "</label><br/>";
 		}
-	}else
+	}else{
 		var node = document.getElementById('messagesbrowser');
 		while (node.hasChildNodes()) {
 			node.removeChild(node.firstChild);
