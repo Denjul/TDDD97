@@ -1,15 +1,14 @@
 <html>
   <head>
-    <link href="client.css" type="text/css" rel="stylesheet">
-    <script src="client.js" type="text/javascript"></script>
-    <script src="serverstub.js" type="text/javascript"></script> 
+    <link href="./static/client.css" type="text/css" rel="stylesheet">
+    <script src="./static/js/client.js" type="text/javascript"></script>
     <script type="text/view" id="welcomeview">
 		<div id="container">
 			<div id="logo">
 			</div>
 			<div id="loginsignup">
 				<div id="login">
-					<form id="loginform" onSubmit="loginUser(loginform);return false;">
+					<form id="loginform" action="/signin"><!--onSubmit="loginUser(loginform);return false;">-->
 						<div class="line"><label>Email: </label><input type="email" class="formfield" name="email" required></div>
 						<div class="line"><label>Password: </label><input type="password" class="formfield" name="pass" pattern=".{6,}" required></div>
 					<div class="line"><input type="submit" value="Sign in" class="formbutton"></div>
@@ -17,7 +16,7 @@
 					</form>
 				</div>
 				<div id="signup">
-					<form id="signupform" action="" onSubmit="return registerUser(signupform);">
+					<form id="signupform" action="/signup">   <!--onSubmit="return registerUser(signupform);">-->
 						<div class="line"><h4><CENTER>Sign up here!</CENTER></h4></div>
 						<div class="line"><label>Email: </label><input type="email" class="formfield" name="email" id="signupemail" required></div>
 						<div class="line"><label>Pass: </label><input type="password" class="formfield" name="pass" id="regpass1"
@@ -35,7 +34,7 @@
 						</div>
 						<div class="line"><label>City: </label><input type="text" name="city" class="formfield" required></div>
 						<div class="line"><label>Country: </label><input type="text" class="formfield" name="country" required></div>
-						<div class="line"><input type="submit" value="Sign up" class="formbutton"></div>
+						<div class="line"><input type="submit" value="Sign up" class="formbutton"/></div>
 					</form>
 				</div>
 			</div>

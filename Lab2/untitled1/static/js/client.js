@@ -7,8 +7,8 @@ function viewController(){
 		document.getElementById("view").innerHTML=document.getElementById("profileview").innerHTML;
 		reload();
 	}
-}
 
+}
 function reload(){
 	//uppdates personal information
 	document.getElementById("pemail").innerHTML = localStorage.email;
@@ -60,8 +60,7 @@ function reloadWall(){
 			node.removeChild(node.firstChild);
 		}
 		document.getElementById("messagesbrowser").innerHTML = "No currently user";
-	}
-}
+    }
 
 
 //used for signinform--------------------------------------------
@@ -116,11 +115,12 @@ function registerUser(frm){
 			userObject.city = frm.city.value;
 			userObject.country = frm.country.value;
 			
-			var res = serverstub.signUp(userObject);
+			//var res = serverstub.signUp(userObject);
+            var res = database_helper.addUser(userObject.email, userObject.password, userObject.firstname, userObject.familyname, userObject.gender, userObject.city, userObject.country)
 			if(res.success){
-				alert(res.message);
+				alert('ok');
 			}else{
-				alert(res.message);
+				alert('nej');
 				return false;
 			}
 			return true;
